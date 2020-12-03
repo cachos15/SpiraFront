@@ -1,0 +1,35 @@
+<div class="login">
+    <div class="container loginCard">
+        <div class="row">
+    <div class="col-sm-12">
+        <h3><b>Listado de cursos</b></h3>
+        <br>
+    </div>
+    <div class="col-sm-12">
+      <input id="busqueda" name="busqueda" #busqueda=ngModel  placeholder="Buscar" [(ngModel)]="busquedaInput" (keyup)="searchCursos()" >
+      <br>
+  </div>
+    <br class="brShow">
+    <div class=" table-responsive"></div>
+        <table class="table  table-bordered table-hover table-light">
+    <thead>
+      <tr class="table-danger">
+        <th scope="col">Nombre</th>
+        <th scope="col">Intensidad horaria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let curso of busquedaInput=='' ? model : modelFilter; let i = index; " >
+        <th scope="row" class="text-center">{{curso.name}}</th>
+        <td class="text-center">{{curso.intensity}}</td>
+      </tr>
+  </table>
+  <!-- <div class="btnCenter">
+    <div class="col-md-12 btnCenter">
+        <div class="btnCenter">
+          <button type="button" class="btn btn-success newBtn" (click)="addCourse()">Agregar curso</button>
+        </div>
+    </div>
+</div> -->
+</div>
+</div>

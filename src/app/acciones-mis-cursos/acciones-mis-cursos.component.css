@@ -1,0 +1,103 @@
+.login{
+    background-image: url('../../assets/BGLogin.jpg');opacity: 1;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+}
+.btnCenter{
+    margin-left: auto;
+    margin-right: auto;
+}
+.loginCard{
+    padding: 3% 5%;
+    margin: auto;
+}
+
+.loginbtn{
+    width: 100%;
+    background-color: #f5C6CB;
+    color: black;
+    border: 1px solid #f5C6CB;
+    border-radius: 20px;
+    padding:5px 25px ;
+    font-weight: 500;
+margin-top:5px;
+margin-bottom:5px;
+}
+
+.loginbtn:hover{
+    width: 100%;
+    background-color: #ed969e;
+    color: black;
+    border: 1px solid #ed969e;
+    border-radius: 20px;
+    padding:5px 25px ;
+    font-weight: 500;
+margin-top:5px;
+margin-bottom:5px;
+}
+
+.newBtn{
+    background-color: #f5C6CB;
+    color: black;
+    border: 1px solid #f5C6CB;
+    border-radius: 20px;
+    padding:5px 25px ;
+    font-weight: 500;
+margin-top:5px;
+margin-bottom:5px;
+}
+
+.newBtn:hover{
+    background-color: #ed969e;
+    color: black;
+    border: 1px solid #ed969e;
+    border-radius: 20px;
+    padding:5px 25px ;
+    font-weight: 500;
+margin-top:5px;
+margin-bottom:5px;
+}
+
+
+.text-center{
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+margin-top:5px;
+margin-bottom:5px;
+}
+.alert{
+    background-color: white;
+    color: #e30612;
+    border: 1px solid #e30612;
+}
+
+.fas{
+    color: #e30612;
+}
+
+/* table,thead,tbody,tr,th,td{
+    border: 1px solid red;
+} */
+
+th,td,tr{
+    vertical-align: middle;
+}
+
+input{
+    width: 60%;
+    background-color: white;
+    color: black;
+    border: 1px solid #ed969e;
+    border-radius: 20px;
+    padding:5px 25px ;
+    font-weight: 500;
+    margin-top:5px;
+    margin-bottom:30px;
+    text-align: center;
+
+}

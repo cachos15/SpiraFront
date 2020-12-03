@@ -1,0 +1,30 @@
+.displayCenter{
+    display: inline-flex;
+    align-items: center;
+}
+
+a:hover{
+    color: #e30612;
+    text-decoration: none;
+}
+
+.marginT{
+    margin-top: 20px;
+}
+
+h5{
+    margin-bottom: 0px;
+}
+
+li{
+    margin: 5%;
+}
+
+.red{
+    color: #e30612;
+}
+
+.centerT{
+    
+    text-align: center;
+}

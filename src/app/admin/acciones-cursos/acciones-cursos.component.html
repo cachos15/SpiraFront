@@ -1,0 +1,46 @@
+<div class="login">
+    <div class="container loginCard">
+        <div class="row">
+    <div class="col-sm-12">
+        <h3><b>{{accion}} curso</b></h3>
+        <br>
+    </div>
+    <br class="brShow">
+
+</div>
+<div class="formAddresss">
+    <form #cursosForm="ngForm" (ngSubmit)="onSubmit();" class="tabcontent">
+        <div [hidden]="nombreC.valid || nombreC.pristine" class="alert alert-primary">
+            El nombre del curso es requerido
+        </div>
+        <div class="form-group">
+            <label for="nombreC">
+                <h6>Nombre del curso</h6>
+            </label>
+            <input type="text" required class="form-control" id="nombreC" required [(ngModel)]="model.name"
+                name="nombreC" #nombreC="ngModel">
+        </div>
+        <div [hidden]="intensidad.valid || intensidad.pristine" class="alert alert-primary">
+            La intensidad horaria es requerida
+        </div>
+        <div class="form-group">
+            <label for="intensidad">
+                <h6>Intensidad horaria</h6>
+            </label>
+            <input type="number" required class="form-control" id="intensidad" required [(ngModel)]="model.intensity"
+                name="intensidad" #intensidad="ngModel" (keypress)="numericOnly($event)">
+        </div>
+        <br>
+        <div class="btnCenter">
+            <div class="col-md-6 btnCenter">
+                <div class="btnCenter">
+                    <button type="submit" class="btn btn-success loginbtn"
+                        [disabled]="!cursosForm.form.valid">{{accion}} curso
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>

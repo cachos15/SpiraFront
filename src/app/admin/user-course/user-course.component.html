@@ -1,0 +1,42 @@
+<div class="login">
+    <div class="container loginCard">
+        <div class="row">
+    <div class="col-sm-12">
+        <h3><b>{{accion}} curso a usuario</b></h3>
+        <br>
+    </div>
+    <br class="brShow">
+
+</div>
+<div class="formAddresss">
+    <form #cursosForm="ngForm" (ngSubmit)="onSubmit();" class="tabcontent">
+        <div class="form-group">
+            <label for="tipo">
+                <h6>Nuevo curso</h6>
+            </label>
+            <select
+              required
+              class="form-control"
+              id="tipo"
+              required
+              [(ngModel)]="model.id_class"
+              name="tipo"
+              #tipo="ngModel"
+            >
+              <option *ngFor="let curso of cursos; let i = index; " value="{{curso.id}}">{{curso.name}}</option>
+            </select>
+        </div>
+        <br>
+        <div class="btnCenter">
+            <div class="col-md-6 btnCenter">
+                <div class="btnCenter">
+                    <button type="submit" class="btn btn-success loginbtn"
+                        [disabled]="!cursosForm.form.valid">{{accion}} curso a usuario
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>

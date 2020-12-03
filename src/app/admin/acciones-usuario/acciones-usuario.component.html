@@ -1,0 +1,86 @@
+<div class="login">
+    <div class="container loginCard">
+        <div class="row">
+    <div class="col-sm-12">
+        <h3><b>{{accion}} usuario</b></h3>
+        <br>
+    </div>
+    <br class="brShow">
+
+</div>
+<div class="formAddresss">
+    <form #cursosForm="ngForm" (ngSubmit)="onSubmit();" class="tabcontent">
+        <div [hidden]="nombreC.valid || nombreC.pristine" class="alert alert-primary">
+            El nombre del usuario es requerido
+        </div>
+        <div class="form-group">
+            <label for="nombreC">
+                <h6>Nombre del usuario</h6>
+            </label>
+            <input type="text" required class="form-control" id="nombreC" required [(ngModel)]="model.name"
+                name="nombreC" #nombreC="ngModel">
+        </div>
+        <div [hidden]="correo.valid || correo.pristine" class="alert alert-primary">
+            El correo del usuario es requerido
+        </div>
+        <div class="form-group">
+            <label for="intensidad">
+                <h6>Correo del usuario</h6>
+            </label>
+            <input type="text" required class="form-control" id="correo" required [(ngModel)]="model.mail"
+                name="correo" #correo="ngModel">
+        </div>
+        <div [hidden]="accion=='Editar' || password.valid || password.pristine" class="alert alert-primary">
+            La contraseña del usuario es requerida
+        </div>
+        <div [hidden]="accion=='Editar'"  class="form-group">
+            <label for="password">
+                <h6>Contraseña del usuario</h6>
+            </label>
+            <input type="password" required class="form-control" id="password" required [(ngModel)]="model.password"
+                name="password" #password="ngModel">
+        </div>
+        <div [hidden]="telefono.valid || telefono.pristine" class="alert alert-primary">
+            El teléfono del usuario es requerido
+        </div>
+        <div class="form-group">
+            <label for="telefono">
+                <h6>Teléfono del usuario</h6>
+            </label>
+            <input type="number" required class="form-control" id="telefono" required [(ngModel)]="model.tel"
+                name="telefono" #telefono="ngModel" (keypress)="numericOnly($event)">
+        </div>
+        <div [hidden]="tipo.valid || tipo.pristine" class="alert alert-primary">
+            El tipo del usuario es requerido
+        </div>
+        <div class="form-group">
+            <label for="tipo">
+                <h6>Tipo del usuario</h6>
+            </label>
+            <select
+              required
+              class="form-control"
+              id="tipo"
+              required
+              [(ngModel)]="model.id_type"
+              name="tipo"
+              #tipo="ngModel"
+            >
+              <option value="1">Estudiante</option>
+              <option value="2">Administrador</option>
+            </select>
+        </div>
+        <br>
+        <div class="btnCenter">
+            <div class="col-md-6 btnCenter">
+                <div class="btnCenter">
+                    <button type="submit" class="btn btn-success loginbtn"
+                        [disabled]="!cursosForm.form.valid">{{accion}} usuario
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>

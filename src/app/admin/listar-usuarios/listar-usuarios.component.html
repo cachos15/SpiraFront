@@ -1,0 +1,54 @@
+<div class="login">
+    <div class="container loginCard">
+        <div class="row">
+    <div class="col-sm-12">
+        <h3><b>Listado de usuarios</b></h3>
+        <br>
+    </div>
+    <div class="col-sm-12">
+      <input id="busqueda" name="busqueda" #busqueda=ngModel  placeholder="Buscar" [(ngModel)]="busquedaInput" (keyup)="searchUsuarios()" >
+      <br>
+  </div>
+    <br class="brShow">
+    <div class=" table-responsive"></div>
+        <table class="table  table-bordered table-hover table-light">
+    <thead>
+      <tr class="table-danger">
+        <th scope="col">Nombre</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Cursos</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of busquedaInput=='' ? model : modelFilter; let i = index; " >
+        <th scope="row" class="text-center">{{usuario.name}}</th>
+        <td class="text-center">{{usuario.mail}}</td>
+        <td class="text-center">{{usuario.tel}}</td>
+        <td class="text-center"><h6 *ngFor="let curso of userCourses[usuario.id]; let i = index; " >{{curso.name}}<br></h6></td>
+        <td class="text-center">
+          <button type="button" class="btn btn-success loginbtn" (click)="addCourse(usuario.id)">Agregar curso</button>
+          <button type="button" class="btn btn-success loginbtn" (click)="editUser(usuario.id)">Editar</button>
+        </td>
+      </tr>
+  </table>
+  <div class="btnCenter">
+    <div class="col-md-12 btnCenter">
+        <div class="btnCenter">
+          <button type="button" class="btn btn-success newBtn" (click)="addUser()">Agregar usuario</button>
+        </div>
+    </div>
+    <div class="col-md-12 btnCenter">
+      <div class="btnCenter">
+        <button type="button" class="btn btn-success newBtn" (click)="goToCurso()">Ver listas de cursos</button>
+      </div>
+  </div>
+    <div class="col-md-12 btnCenter">
+      <div class="btnCenter">
+        <button type="button" class="btn btn-success newBtn" (click)="addCurso()">Agregar curso</button>
+      </div>
+  </div>
+</div>
+</div>
+</div>
